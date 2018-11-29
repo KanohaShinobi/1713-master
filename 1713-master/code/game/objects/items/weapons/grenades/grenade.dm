@@ -120,3 +120,28 @@
 	if(explosion_size)
 		explosion(O,1,2,3,1)
 		qdel(src)
+
+/obj/item/weapon/grenade/jap_grenade
+	name = "grenade"
+	desc = "A hand held grenade, with a 5 second fuse."
+	icon = 'icons/obj/grenade.dmi'
+	icon_state = "grenade_jap"
+	item_state = "grenade"
+	var/explosion_size = 2
+	throw_speed = 4
+	throw_range = 8
+	flags = CONDUCT
+	slot_flags = SLOT_BELT|SLOT_MASK
+	var/active = FALSE
+	var/det_time = 50
+
+/obj/item/weapon/grenade/old_grenade/prime()
+	set waitfor = 0
+	..()
+
+	var/turf/O = get_turf(src)
+	if(!O) return
+
+	if(explosion_size)
+		explosion(O,0,1,3,1)
+		qdel(src)

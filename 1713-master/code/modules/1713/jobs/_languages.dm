@@ -14,6 +14,9 @@
 /datum/job/civilian/spanish
 	default_language = "Spanish"
 	additional_languages = list("Portuguese" = 15, "French" = 25, "English" = 10)
+/datum/job/civilian/japanese
+	default_language = "Japanese"
+	additional_languages = list("English" = 10, "Russian" = 15, "French" = 2)
 
 /datum/job/pirates
 	default_language = "English"
@@ -54,7 +57,17 @@
 /datum/job/arab
 	default_language = "Arabic"
 	additional_languages = list("French" = 10)
+
+/datum/job/japanese
+	default_language = "Japanese"
+	additional_languages = list("English" = 15, "Russian" = 20)
+
+/datum/job/japanese
+	default_language = "Russian"
+	additional_languages = list("English" = 10, "Japanese" = 10)
+
 /datum/job/update_character(var/mob/living/carbon/human/H)
+
 	. = ..()
 
 	var/list/notes = list()
@@ -136,4 +149,12 @@
 		if (ARAB)
 			for (var/datum/language/arab/A in H.languages)
 				H.default_language = A
+				break
+		if (JAPANESE)
+			for (var/datum/language/japanese/A in H.languages)
+				H.default_language = J
+				break
+		if (RUSSIAN)
+			for (var/datum/language/russian/A in H.languages)
+				H.default_language = R
 				break
