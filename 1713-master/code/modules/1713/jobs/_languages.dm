@@ -14,6 +14,7 @@
 /datum/job/civilian/spanish
 	default_language = "Spanish"
 	additional_languages = list("Portuguese" = 15, "French" = 25, "English" = 10)
+
 /datum/job/civilian/japanese
 	default_language = "Japanese"
 	additional_languages = list("English" = 10, "Russian" = 15, "French" = 2)
@@ -60,11 +61,7 @@
 
 /datum/job/japanese
 	default_language = "Japanese"
-	additional_languages = list("English" = 15, "Russian" = 20)
-
-/datum/job/japanese
-	default_language = "Russian"
-	additional_languages = list("English" = 10, "Japanese" = 10)
+	additional_languages = list("Russian" = 10, "English" = 15)
 
 /datum/job/update_character(var/mob/living/carbon/human/H)
 
@@ -150,11 +147,7 @@
 			for (var/datum/language/arab/A in H.languages)
 				H.default_language = A
 				break
-		if (JAPANESE)
-			for (var/datum/language/japanese/A in H.languages)
+		if (JAPANESE) //system is racist and doesn't like japs. undefined var.
+			for (var/datum/language/japanese/J in H.languages)
 				H.default_language = J
-				break
-		if (RUSSIAN)
-			for (var/datum/language/russian/A in H.languages)
-				H.default_language = R
 				break

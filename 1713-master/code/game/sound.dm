@@ -169,6 +169,9 @@ var/list/charge_sounds_ar = list(
 	)
 var/list/charge_sounds_crusader = list(
 	'sound/effects/emotes/charge_crusader.ogg',)
+var/list/charge_sounds_jp = list(
+	'sound/effects/emotes/charge_jp.ogg',)
+
 // pain, etc sounds from Interbay
 
 /proc/playsound(var/atom/source, soundin, vol as num, vary, extrarange as num, falloff, var/is_global, var/list/excluded = list())

@@ -17,6 +17,8 @@
 #define DUTCH "DUTCH"
 #define GREEK "GREEK"
 #define ARAB "ARAB"
+#define JAPANESE "JAPANESE"
+#define RUSSIAN "RUSSIAN"
 
 /proc/faction_const2name(constant)
 
@@ -52,3 +54,9 @@
 
 	if (constant == ARAB)
 		return "Arabic Caliphate"
+
+	if (constant == JAPANESE)
+		return "Japanese Empire"
+
+	if (constant == RUSSIAN)
+		return "Russian empire"

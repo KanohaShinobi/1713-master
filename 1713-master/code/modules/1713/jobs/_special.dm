@@ -68,6 +68,8 @@
 		. = GREEK
 	else if (istype(src, /datum/job/arab))
 		. = ARAB
+	else if (istype(src, /datum/job/japanese))
+		. = JAPANESE //idk broken. undefined var.
 	_base_type_flag = .
 	return _base_type_flag
 
@@ -108,7 +110,10 @@
 		user.base_faction = new/datum/faction/greek(user, src)
 	else if (istype(src, /datum/job/arab))
 		user.faction_text = "ARAB"
-		user.base_faction = new/datum/faction/arab(user, src)
+		user.base_faction = new/datum/faction/greek(user, src)
+	else if (istype(src, /datum/job/japanese))
+		user.faction_text = "JAPANESE"
+		user.base_faction = new/datum/faction/japanese(user, src)
 /datum/job/proc/opposite_faction_name()
 	if (istype(src, /datum/job/pirates))
 		return "British Empire"
