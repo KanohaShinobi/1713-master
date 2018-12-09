@@ -280,12 +280,12 @@
 	else
 		icon_state = "arisaka35"
 
-	/obj/item/weapon/gun/projectile/boltaction/murata
-	name = "Type 22 Murata"
-	desc = "Japanese bolt-action rifle chambered in 6.50x50mm Arisaka ammunition with an 8 round capacity, a fairly old model."
+/obj/item/weapon/gun/projectile/boltaction/murata
+	name = "Type-22 Murata"
+	desc = "Japanese bolt-action rifle chambered in 6.50x50mm Arisaka ammunition."
 	icon = 'icons/obj/rifles.dmi'
-	icon_state = "murata"
-	item_state = "murata"
+	icon_state = "arisaka35"
+	item_state = "arisaka35"
 	caliber = "a65x50mm"
 	weight = 3.8
 	fire_sound = 'sound/weapons/kar_shot.ogg'
@@ -299,7 +299,7 @@
 	throwforce = 20
 	max_shells = 8
 	handle_casings = HOLD_CASINGS
-	load_method = SINGLE_CASING
+	load_method = SINGLE_CASING | SPEEDLOADER
 	magazine_type = /obj/item/ammo_magazine/projectile/arisaka
 	load_shell_sound = 'sound/weapons/clip_reload.ogg'
 
@@ -307,9 +307,9 @@
 	if (bolt_open)
 		if (!findtext(icon_state, "_open"))
 			icon_state = addtext(icon_state, "_open") //open
-	else if (icon_state == "murata_open") //closed
-		icon_state = "murata"
-	else if (icon_state == "murata")
+	else if (icon_state == "arisaka35_open") //closed
+		icon_state = "arisaka35"
+	else if (icon_state == "arisaka35")
 		return
 	else
-		icon_state = "murata"
+		icon_state = "arisaka35"
