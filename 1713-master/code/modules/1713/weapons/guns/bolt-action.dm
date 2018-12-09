@@ -248,7 +248,7 @@
 
 
 /obj/item/weapon/gun/projectile/boltaction/arisaka35
-	name = "Arisaka Type 30"
+	name = "Arisaka Type 35"
 	desc = "Japanese bolt-action rifle chambered in 6.50x50mm Arisaka ammunition."
 	icon = 'icons/obj/rifles.dmi'
 	icon_state = "arisaka35"

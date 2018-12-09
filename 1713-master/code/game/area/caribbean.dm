@@ -532,3 +532,18 @@
 	base_turf = /turf/floor/plating/sand
 /area/caribbean/arab/sand
 	base_turf = /turf/floor/plating/sand
+
+/area/caribbean/japanese
+	name = "japanese"
+/area/caribbean/japanese/land
+	name = "Land Base"
+	icon_state = "red1"
+	base_turf = /turf/floor/dirt
+
+/area/caribbean/japanese/land/inside
+	location = AREA_INSIDE
+	icon_state = "red2"
+
+
+/area/caribbean/japanese/land/outside
+	icon_state = "red3"
