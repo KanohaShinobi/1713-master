@@ -1,6 +1,9 @@
+//all bolt-action weapons
+
 /obj/item/weapon/gun/projectile/boltaction
 	name = "bolt-action rifle"
 	desc = "A bolt-action rifle of true ww2 (You shouldn't be seeing this)"
+	icon = 'icons/obj/rifles.dmi'
 	icon_state = "mosin"
 	item_state = "mosin" //placeholder
 	w_class = 4
@@ -13,8 +16,8 @@
 	//fire_sound = 'sound/weapons/sniper.ogg'
 	handle_casings = HOLD_CASINGS
 	load_method = SINGLE_CASING | SPEEDLOADER
-	ammo_type = /obj/item/ammo_casing/a762x54
-	magazine_type = /obj/item/ammo_magazine/mosin
+	ammo_type = /obj/item/projectile/bullet/rifle/a762x54
+	magazine_type = /obj/item/ammo_magazine/projectile/mosin
 	load_shell_sound = 'sound/weapons/clip_reload.ogg'
 	//+2 accuracy over the LWAP because only one shot
 	accuracy = TRUE
@@ -168,41 +171,145 @@
 /obj/item/weapon/gun/projectile/boltaction/mosin
 	name = "Mosin-Nagant"
 	desc = "Soviet bolt-action rifle chambered in 7.62x54mmR cartridges."
-	icon = 'icons/rifles.dmi'
+	icon = 'icons/obj/rifles.dmi'
 	icon_state ="mosin"
-	icon_state ="mosin
+	item_state ="mosin"
 	force = 12
 	fire_sound = 'sound/weapons/mosin_shot.ogg'
 	caliber = "a762x54"
 	weight = 4.0
 	effectiveness_mod = 0.97
+	bolt_safety = FALSE
+	value = 100
+	recoil = 2
+	slot_flags = SLOT_BACK
+	throwforce = 20
+	handle_casings = HOLD_CASINGS
+	load_method = SINGLE_CASING | SPEEDLOADER
+	ammo_type = /obj/item/projectile/bullet/rifle/a762x54
+	magazine_type = /obj/item/ammo_magazine/projectile/mosin
+	load_shell_sound = 'sound/weapons/clip_reload.ogg'
+
+	//This should only be temporary until more attachment icons are made, then we switch to adding/removing icon masks
+/obj/item/weapon/gun/projectile/boltaction/mosin/update_icon(var/add_scope = FALSE)
+	if (add_scope)
+		if (bolt_open)
+			icon_state = "mosin_open"
+			item_state = "mosin"
+			return
+		else
+			icon_state = "mosin"
+			item_state = "mosin"
+			return
+	if (bolt_open)
+		if (!findtext(icon_state, "_open"))
+			icon_state = addtext(icon_state, "_open") //open
+	else if (icon_state == "mosin_open") //closed
+		icon_state = "mosin"
+	else if (icon_state == "mosin")
+		return
+	else
+		icon_state = "mosin"
+
 
 
 /obj/item/weapon/gun/projectile/boltaction/arisaka30
 	name = "Arisaka Type 30"
 	desc = "Japanese bolt-action rifle chambered in 6.50x50mm Arisaka ammunition."
-	icon = 'icons/rifles.dmi'
+	icon = 'icons/obj/rifles.dmi'
 	icon_state = "arisaka30"
 	item_state = "arisaka30"
-	caliber = "a65x50"
+	caliber = "a65x50mm"
 	weight = 3.8
 	fire_sound = 'sound/weapons/kar_shot.ogg'
-	ammo_type = /obj/item/ammo_casing/a65x50
-	magazine_type = /obj/item/ammo_magazine/arisaka30
+	ammo_type = /obj/item/projectile/bullet/rifle/a65x50mm
+	magazine_type = /obj/item/ammo_magazine/projectile/arisaka
 	bolt_safety = FALSE
 	effectiveness_mod = 0.99
+	value = 100
+	slot_flags = SLOT_BACK
+	recoil = 2
+	force = 12
+	throwforce = 20
+	handle_casings = HOLD_CASINGS
+	load_method = SINGLE_CASING | SPEEDLOADER
+	load_shell_sound = 'sound/weapons/clip_reload.ogg'
+
+/obj/item/weapon/gun/projectile/boltaction/arisaka30/update_icon(var/add_scope = FALSE)
+	if (bolt_open)
+		if (!findtext(icon_state, "_open"))
+			icon_state = addtext(icon_state, "_open") //open
+	else if (icon_state == "arisaka30_open") //closed
+		icon_state = "arisaka30"
+	else if (icon_state == "arisaka30")
+		return
+	else
+		icon_state = "arisaka30"
 
 
 /obj/item/weapon/gun/projectile/boltaction/arisaka35
 	name = "Arisaka Type 30"
 	desc = "Japanese bolt-action rifle chambered in 6.50x50mm Arisaka ammunition."
-	icon = 'icons/rifles.dmi'
+	icon = 'icons/obj/rifles.dmi'
 	icon_state = "arisaka35"
 	item_state = "arisaka35"
-	caliber = "a65x50"
+	caliber = "a65x50mm"
 	weight = 3.8
 	fire_sound = 'sound/weapons/kar_shot.ogg'
-	ammo_type = /obj/item/ammo_casing/a65x50
-	magazine_type = /obj/item/ammo_magazine/arisaka35
+	ammo_type = /obj/item/projectile/bullet/rifle/a65x50mm
 	bolt_safety = FALSE
 	effectiveness_mod = 1.05
+	value = 120
+	slot_flags = SLOT_BACK
+	recoil = 2
+	force = 12
+	throwforce = 20
+	handle_casings = HOLD_CASINGS
+	load_method = SINGLE_CASING | SPEEDLOADER
+	magazine_type = /obj/item/ammo_magazine/projectile/arisaka
+	load_shell_sound = 'sound/weapons/clip_reload.ogg'
+
+/obj/item/weapon/gun/projectile/boltaction/arisaka35/update_icon(var/add_scope = FALSE)
+	if (bolt_open)
+		if (!findtext(icon_state, "_open"))
+			icon_state = addtext(icon_state, "_open") //open
+	else if (icon_state == "arisaka35_open") //closed
+		icon_state = "arisaka35"
+	else if (icon_state == "arisaka35")
+		return
+	else
+		icon_state = "arisaka35"
+
+	/obj/item/weapon/gun/projectile/boltaction/murata
+	name = "Type 22 Murata"
+	desc = "Japanese bolt-action rifle chambered in 6.50x50mm Arisaka ammunition with an 8 round capacity, a fairly old model."
+	icon = 'icons/obj/rifles.dmi'
+	icon_state = "murata"
+	item_state = "murata"
+	caliber = "a65x50mm"
+	weight = 3.8
+	fire_sound = 'sound/weapons/kar_shot.ogg'
+	ammo_type = /obj/item/projectile/bullet/rifle/a65x50mm
+	bolt_safety = FALSE
+	effectiveness_mod = 1.05
+	value = 120
+	slot_flags = SLOT_BACK
+	recoil = 2
+	force = 12
+	throwforce = 20
+	max_shells = 8
+	handle_casings = HOLD_CASINGS
+	load_method = SINGLE_CASING
+	magazine_type = /obj/item/ammo_magazine/projectile/arisaka
+	load_shell_sound = 'sound/weapons/clip_reload.ogg'
+
+/obj/item/weapon/gun/projectile/boltaction/arisaka35/update_icon(var/add_scope = FALSE)
+	if (bolt_open)
+		if (!findtext(icon_state, "_open"))
+			icon_state = addtext(icon_state, "_open") //open
+	else if (icon_state == "murata_open") //closed
+		icon_state = "murata"
+	else if (icon_state == "murata")
+		return
+	else
+		icon_state = "murata"

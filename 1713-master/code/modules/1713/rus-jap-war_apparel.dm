@@ -92,9 +92,9 @@
 	name = "Matagi Vest"
 	desc = "A warm, fur lined vest made of leather."
 	icon = 'icons/mob/russo-jap_uni.dmi'
-	icon_state = "knight_simple"
-	item_state = "knight_simple"
-	worn_state = "knight_simple"
+	icon_state = "japvest"
+	item_state = "japvest"
+	worn_state = "japvest"
 	body_parts_covered = UPPER_TORSO
 	cold_protection = UPPER_TORSO
 	armor = list(melee = 10, bullet = 10, laser = 10,energy = 10, bomb = 10, bio = 10, rad = FALSE)
@@ -113,6 +113,13 @@
 	icon = 'icons/mob/russo-jap_uni.dmi'
 	icon_state = "japcap2"
 	item_state = "japcap2"
+
+obj/item/clothing/head/japoffcap
+	name = "Japanese Officer Cap"
+	desc = "A cap worn by japanese officers."
+	icon = 'icons/mob/russo-jap_uni.dmi'
+	icon_state = "japoffcap"
+	item_state = "japoffcap"
 
 /obj/item/clothing/head/ruscap
 	name = "Russian Cap"

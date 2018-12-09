@@ -412,6 +412,7 @@
 #include "code\modules\1713\weapons\guns\bolt-action.dm"
 #include "code\modules\1713\weapons\guns\bow.dm"
 #include "code\modules\1713\weapons\guns\flintlock.dm"
+#include "code\modules\1713\weapons\guns\pistols.dm"
 #include "code\modules\1713\weapons\guns\mg\stationary\climbing.dm"
 #include "code\modules\1713\weapons\guns\mg\stationary\mg.dm"
 #include "code\modules\admin\admin.dm"

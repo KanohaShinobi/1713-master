@@ -7,15 +7,15 @@
 	anchored = TRUE
 	density = TRUE
 	w_class = 6
-	magazine_type = /obj/item/ammo_magazine/maxim/type92_belt
+	magazine_type = /obj/item/ammo_magazine/projectile/maxim/type92_belt
 	auto_eject = TRUE
 	load_method = MAGAZINE
 	handle_casings = EJECT_CASINGS
 	max_shells = FALSE
 	caliber = "a77x58"
-	fire_sound = 'sound/weapons/guns/fire/mg34_firing.ogg'
+	fire_sound = 'sound/weapons/mg34_firing.ogg'
 	slot_flags = FALSE
-	ammo_type = /obj/item/ammo_casing/a77x58_weaker
+	ammo_type = /obj/item/projectile/bullet/rifle/a762x38
 
 	firemodes = list(	// changed burst from 3 to 6, burst_delay from 2.5 to 0.1 to make this more mg-ish - Kachnov
 		list(name="default", burst=10, burst_delay=0.1, fire_delay=0.75, dispersion=list(0.9, 1.1, 1.1, 1.1, 1.3), accuracy=list(2))
@@ -44,7 +44,7 @@
 	load_method = MAGAZINE
 	handle_casings = EJECT_CASINGS
 	caliber = "a762x54"
-	magazine_type = /obj/item/ammo_magazine/maxim
+	magazine_type = /obj/item/ammo_magazine/projectile/maxim
 	max_shells = FALSE
 	anchored = FALSE
 	auto_eject = TRUE
@@ -79,7 +79,7 @@
 	anchored = TRUE
 	density = TRUE
 	w_class = 6
-	magazine_type = /obj/item/ammo_magazine/maxim
+	magazine_type = /obj/item/ammo_magazine/projectile/maxim
 	auto_eject = TRUE
 	load_method = MAGAZINE
 	handle_casings = EJECT_CASINGS
@@ -87,7 +87,7 @@
 	caliber = "a762x54"
 	fire_sound = 'sound/weapons/maxim_shot.ogg'
 	slot_flags = FALSE
-	ammo_type = /obj/item/ammo_casing/a762x54
+	ammo_type = /obj/item/projectile/bullet/mg/a127x108
 
 	firemodes = list(	// changed burst from 3 to 6, burst_delay from 2.5 to 0.1 to make this more mg-ish - Kachnov
 		list(name="default", burst=10, burst_delay=0.1, fire_delay=0.75, dispersion=list(0.9, 1.1, 1.1, 1.1, 1.3), accuracy=list(2))
